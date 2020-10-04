@@ -12,20 +12,23 @@ Funkcionális követelmények:
   
   
    -Emberek    -dokumentumok lejárati dátumok
-                  -tartozások
-                  -utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
-                  -amennyiben "Növendék" a képzése állása
+               -tartozások
+               -utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
+               -amennyiben "Növendék" a képzése állása
       
    -Járművek   -bizt
-                  -rádio
-                  -légi alkalmassági
-                  -canfly/grounded  
+               -rádio
+               -légi alkalmassági
+               -canfly/grounded  
       
    -Eszközök   -ernyők
-                  -szállítókocsik
-                  -
+               -szállítókocsik
+               
       
-   -Repülések -x idő -> ember -> árlista --> összeg
+   -Repülések   -repült idő 
+                -ember 
+                -árlista 
+                -összeg
 
 Nem funkcionális követelmények:
     -Dark mode
@@ -33,6 +36,9 @@ Nem funkcionális követelmények:
     -Összesített erpülések megtekintése
     -
 
+Szakterületi fogalomjegyzék:
+ 
+  
 
 Szerepkörök:
   Növendékek: megtekinthet minden állapotot de nem vihet fel új canfly/grounded issue-t.
