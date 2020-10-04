@@ -9,35 +9,34 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
   Login után minden felhadználó látja a jogosultságának megfelelő teendőket lejárati dátumokat, fel tud vinni új canfly/groudned  issue-t. A megfeellő jogosultságú felhasználók jóváhagyják őket.
   
   Táblák
-  
-  
-   -Emberek    
-    - dokumentumok lejárati dátumok
-    - tartozások
-    - utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
-    - amennyiben "Növendék" a képzése állása
+  -Emberek    
+   - dokumentumok lejárati dátumok
+   - tartozások
+   - utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
+   - amennyiben "Növendék" a képzése állása
       
-   -Járművek   
-    - biztosítás
-    - rádio
-    - légi alkalmassági
-    - canfly/grounded  
+  -Járművek   
+   - biztosítás
+   - rádio
+   - légi alkalmassági
+   - canfly/grounded  
       
-   -Eszközök  
-    - ernyők
-    - szállítókocsik
+  -Eszközök  
+   - ernyők
+   - szállítókocsik
                
       
-   -Repülések   
-    - repült idő 
-    - ember 
-    - árlista 
-    - összeg
+  -Repülések   
+   - repült idő 
+   - ember 
+   - árlista 
+   - összeg
 
 ## Nem funkcionális követelmények:
-    -Dark mode
-    -Lejárati dátumokra való figylemeztetés
-    -Összesített erpülések megtekintése
+   
+   -Dark mode
+   -Lejárati dátumokra való figylemeztetés
+   -Összesített erpülések megtekintése
     -
 
 ## Szakterületi fogalomjegyzék:
