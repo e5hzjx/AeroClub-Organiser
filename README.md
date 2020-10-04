@@ -1,1 +1,1 @@
-# AeroClub-Organiser
+# Aeroclub-Organiser
