@@ -11,10 +11,10 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
   Tervezett táblák:
   
   - Emberek    
-   - dokumentumok lejárati dátumok
-   - tartozások
-   - utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
-   - amennyiben "Növendék" a képzése állása
+    - dokumentumok lejárati dátumok
+    - tartozások
+    - utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
+    - amennyiben "Növendék" a képzése állása
       
   - Járművek   
    - biztosítás
