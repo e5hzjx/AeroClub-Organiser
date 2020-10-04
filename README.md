@@ -17,21 +17,21 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
     - amennyiben "Növendék" a képzése állása
       
   - Járművek   
-   - biztosítás
-   - rádio
-   - légi alkalmassági
-   - canfly/grounded  
+    - biztosítás
+    - rádio
+    - légi alkalmassági
+    - canfly/grounded  
       
   - Eszközök  
-   - ernyők
-   - szállítókocsik
+    - ernyők
+    - szállítókocsik
                
       
   - Repülések   
-   - repült idő 
-   - ember 
-   - árlista 
-   - összeg
+    - repült idő 
+    - ember 
+    - árlista 
+    - összeg
 
 ## Nem funkcionális követelmények:
    - Dark mode
@@ -44,10 +44,10 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
   
 
 ## Szerepkörök:
-  Növendékek: megtekinthet minden állapotot de nem vihet fel új canfly/grounded issue-t.
-  Szakszós: Növendék szerepkör kibővítve az issue felvitelével + elfogadásával.
-  Oktatók: Szakszós szerepkör kibővítése a növendék adataira való rálátással.
-  Vezetőség / Admin : mindenre kiterjedő szerepkör(?)
+  - Növendékek: megtekinthet minden állapotot de nem vihet fel új canfly/grounded issue-t.
+  - Szakszós: Növendék szerepkör kibővítve az issue felvitelével + elfogadásával.
+  - Oktatók: Szakszós szerepkör kibővítése a növendék adataira való rálátással.
+  - Vezetőség / Admin : mindenre kiterjedő szerepkör(?)
   
   
  
