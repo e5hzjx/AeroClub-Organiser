@@ -9,21 +9,23 @@ Funkcionális követelmények:
   Login után minden felhadználó látja a jogosultságának megfelelő teendőket lejárati dátumokat, fel tud vinni új canfly/groudned  issue-t. A megfeellő jogosultságú felhasználók jóváhagyják őket.
   
   Táblák
-      -Emberek    -dokumentumok lejárati dátumok
+  
+  
+   -Emberek    -dokumentumok lejárati dátumok
                   -tartozások
                   -utoljára repülés dátuma 8 és ideje az aktuálishoz képest)
                   -amennyiben "Növendék" a képzése állása
       
-      -Járművek   -bizt
+   -Járművek   -bizt
                   -rádio
                   -légi alkalmassági
                   -canfly/grounded  
       
-      -Eszközök   -ernyők
+   -Eszközök   -ernyők
                   -szállítókocsik
                   -
       
-      -Repülések -x idő -> ember -> árlista --> összeg
+   -Repülések -x idő -> ember -> árlista --> összeg
 
 Nem funkcionális követelmények:
     -Dark mode
