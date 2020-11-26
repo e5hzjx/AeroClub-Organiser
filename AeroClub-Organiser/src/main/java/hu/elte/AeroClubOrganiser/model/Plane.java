@@ -1,20 +1,25 @@
 package hu.elte.AeroClubOrganiser.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import org.hibernate.engine.profile.Fetch;
+
+import javax.persistence.*;
 import java.sql.Date;
 
 @Entity
-public class Planes {
+public class Plane {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long ID;
-    long type;
+    long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    PlaneType type;
+
     String regNumber;
     String tailNumber;
-    long responsiblePerson;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    Pilot responsiblePerson;
+
     Date airworthinessValidUntil;
     Date insuranceValidUtil;
     Date yearlyMaintenance;

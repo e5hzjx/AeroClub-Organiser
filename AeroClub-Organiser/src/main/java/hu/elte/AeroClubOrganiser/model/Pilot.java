@@ -1,17 +1,19 @@
 package hu.elte.AeroClubOrganiser.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
+import java.util.List;
 
 
 @Entity
-public class Pilots {
+public class Pilot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long ID;
+    long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private List<Endorsement> endorsements;
+
     String name;
     String email;
     String password;

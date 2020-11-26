@@ -1,15 +1,22 @@
 package hu.elte.AeroClubOrganiser.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class PlaneType {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long ID;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+
+    @Column(name = "type", nullable = false)
     String type;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "endorsement_fk")
+    Endorsement endorsement;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "plane_fk")
+    private List<Plane> planes;
 }

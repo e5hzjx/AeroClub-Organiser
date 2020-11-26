@@ -1,9 +1,6 @@
 package hu.elte.AeroClubOrganiser.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.sql.Date;
 
 
@@ -11,14 +8,17 @@ import java.sql.Date;
 public class Transporter {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long ID;
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    long planeID;
+    long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    Plane planeId;
+
     String transporterType;
     String licensePlaneNumber;
     Date technicalSuitabilityValid;
     Date insuranceValidUntil;
-    long responsiblePerson;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    Pilot responsiblePerson;
 
 }
