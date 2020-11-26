@@ -1,7 +1,5 @@
 package hu.elte.AeroClubOrganiser.model;
 
-import org.hibernate.engine.profile.Fetch;
-
 import javax.persistence.*;
 import java.sql.Date;
 

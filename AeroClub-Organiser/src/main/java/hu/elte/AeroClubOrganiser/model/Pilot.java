@@ -13,6 +13,8 @@ public class Pilot {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private List<Endorsement> endorsements;
+    @ManyToOne(fetch = FetchType.LAZY)
+    Transporter transporter;
 
     String name;
     String email;
