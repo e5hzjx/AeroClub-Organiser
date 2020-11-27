@@ -1,13 +1,13 @@
 package hu.elte.AeroClubOrganiser.repository;
 
-import hu.elte.AeroClubOrganiser.model.Licenses;
+import hu.elte.AeroClubOrganiser.model.License;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface LicensesRepository extends JpaRepository<Licenses, Long> {
+public interface LicenseRepository extends JpaRepository<License, Long> {
     @Override
-    Optional<Licenses> findById(Long aLong);
+    Optional<License> findById(Long aLong);
 }

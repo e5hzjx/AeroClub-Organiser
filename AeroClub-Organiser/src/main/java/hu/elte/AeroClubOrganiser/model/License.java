@@ -9,7 +9,7 @@ import java.sql.Date;
 
 
 @Entity
-public class Licenses {
+public class License {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     long ID;

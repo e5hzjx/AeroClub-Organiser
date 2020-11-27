@@ -2,6 +2,7 @@ package hu.elte.AeroClubOrganiser.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class PlaneType {
@@ -19,4 +20,5 @@ public class PlaneType {
     @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "plane_fk")
     private List<Plane> planes;
+
 }
