@@ -2,7 +2,6 @@ package hu.elte.AeroClubOrganiser.service.impl;
 
 
 import hu.elte.AeroClubOrganiser.model.License;
-import hu.elte.AeroClubOrganiser.model.Plane;
 import hu.elte.AeroClubOrganiser.repository.LicenseRepository;
 import hu.elte.AeroClubOrganiser.service.LicenseService;
 import org.springframework.beans.factory.annotation.Autowired;

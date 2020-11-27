@@ -10,7 +10,7 @@ public class Endorsement {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long Id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne (fetch = FetchType.LAZY)
     private Pilot pilotId;
 
     @OneToOne(fetch = FetchType.LAZY)

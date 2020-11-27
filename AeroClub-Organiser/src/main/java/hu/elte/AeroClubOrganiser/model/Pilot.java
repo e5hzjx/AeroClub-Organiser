@@ -9,18 +9,21 @@ import java.util.List;
 public class Pilot {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    long id;
+    private long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<License> licens;
+
+    @OneToMany(fetch = FetchType.LAZY)
     private List<Endorsement> endorsements;
     @ManyToOne(fetch = FetchType.LAZY)
-    Transporter transporter;
+    private Transporter transporter;
 
-    String name;
-    String email;
-    String password;
-    String rememberToken;
-    String number;
-    Date dateOfBirth;
-    Date startOfClubMembership;
+    private String name;
+    private String email;
+    private String password;
+    private String rememberToken;
+    private String number;
+    private Date dateOfBirth;
+    private Date startOfClubMembership;
 }
