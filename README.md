@@ -1,12 +1,12 @@
 # Aeroclub-Organiser
 
-Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltérő jogosultsági körrel segítve a felhasználó pilótáknak, növendékeknek és okatatókank nyomonkövetni a felszerelés illetve a dokumentumok állapotát.
+Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltérő jogosultsági körrel segítve a felhasználó pilótáknak, növendékeknek és okatatókank nyomonkövetni a felszerelés, illetve a dokumentumok állapotát.
 
 
 
 ##  Funkcionális követelmények:
 
-  Login után minden felhadználó látja a jogosultságának megfelelő teendőket lejárati dátumokat, fel tud vinni új canfly/groudned  issue-t. A megfeellő jogosultságú felhasználók jóváhagyják őket.
+  Login után minden felhasználó látja a jogosultságának megfelelő teendőket lejárati dátumokat, fel tud vinni új canfly/groudned  issue-t. A megfelelő jogosultságú felhasználók jóváhagyják őket.
   
   Tervezett táblák:
   
@@ -23,8 +23,9 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
     - canfly/grounded  
       
   - Eszközök  
-    - ernyők
+    - ejtőernyők
     - szállítókocsik
+    - poroltók
                
       
   - Repülések   
@@ -34,9 +35,8 @@ Egy reptér alapvető nyilvántartási és szervezései rendszere. Több eltér�
     - összeg
 
 ## Nem funkcionális követelmények:
-   - Dark mode
    - Lejárati dátumokra való figylemeztetés
-   - Összesített erpülések megtekintése
+   - Összesített repülések megtekintése
     
 
 ## Szakterületi fogalomjegyzék:
