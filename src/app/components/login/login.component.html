@@ -1,0 +1,25 @@
+
+<div style="margin-bottom: 5%;"></div>
+<div class="row">
+    <div class="col-sm" style="background-image: url('../../../assets/login.jpg'); background-repeat: no-repeat;"></div>
+
+    <div class="col-sm">
+        <h2>Login</h2>
+        <form >
+                <label for="userName">Username</label><br>
+                <input type="text"  class="form-control" placeholder="Your username" />
+            <br>
+                <label for="password">Password</label><br>
+                <input type="password" class="form-control" placeholder="Your password"/>
+
+                <button [disabled]="loading" class="btn btn-primary">
+                    <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+                    Login
+                </button>
+
+        </form>
+        <div class="container signin">
+            <p>Don't you have an account? <a href="signup">Sign up</a>.</p>
+        </div>
+    </div>
+</div>
