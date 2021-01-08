@@ -9,7 +9,7 @@ import { AuthService } from './auth.service';
 @Injectable({
     providedIn: 'root'
   }) 
-export class PlaneService {
+export class ParachuteService {
     private url = 'http://176.63.148.61:8080/plane/findbyid?id=2';
 
     currentPilot: Pilot;
@@ -33,21 +33,21 @@ export class PlaneService {
 
 
 
-    getPlane() : void {
+    getParachute() : void {
         //Observable<HttpEvent<Plane[]>>        
          this.http
             .get<Plane[]>(this.url, this.httpOptions).subscribe((resp)=>{console.log(resp + "asd")});
     }
 
-    postPlane(goal) {
+    postParachute(goal) {
         console.log(JSON.stringify(goal));
      //   return this.http.post<Pilot>(this.url + this.currentUser.userName, JSON.stringify(goal), this.httpOptions);
     }
 
-    updatePlane(id :number, goal) {
+    updateParachute(id :number, goal) {
         //return this.http.put<any>(this.url + this.currentUser.userName  +"/" + id, JSON.stringify(goal), this.httpOptions);
     }
-    deletePlane(id: number) {
+    deleteParachute(id: number) {
         //return this.http.delete<any>(this.url + this.currentUser.userName +"/" + id, this.httpOptions);
     }
 

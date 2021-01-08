@@ -11,6 +11,7 @@ import { LicenseService } from './services/license.service';
 import { PilotService } from './services/pilot.service';
 import { TransporterService } from './services/transporter.service';
 import { LoginComponent } from './components/login/login.component';
+import { DatainputComponent } from './components/datainput/datainput.component';
 
 const routes:Routes = [
  
@@ -20,6 +21,7 @@ const routes:Routes = [
   declarations: [
     AppComponent,
     LoginComponent,
+    DatainputComponent,
  
   ],
   imports: [

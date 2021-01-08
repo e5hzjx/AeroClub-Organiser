@@ -5,27 +5,26 @@ export class Plane{
     tailnumber: String;
     regnumber: String;
     planetype: Planetype;    //? Type
-    responsibleperson: Pilot;
+    responsiblePerson: Pilot;
     airworthinessValidUntil: Date;
     insuranceValidUntil: Date;
     yearlyMaintenance: Date;
-
-
     id? : number;
     constructor( 
         tailnumber: String,
         regnumber:String,
         planetype:Planetype,    //? Type
-        responsibleperson: Pilot,
+        responsiblePerson: Pilot,
         airworthinessValidUntil: Date,
         insuranceValidUntil: Date,
         yearlyMaintenance: Date,
+        
         id? : number    
     ){
         this.tailnumber=tailnumber;
         this.regnumber=regnumber;
         this.planetype=planetype;
-        this.responsibleperson=responsibleperson;
+        this.responsiblePerson=responsiblePerson;
         this.airworthinessValidUntil=airworthinessValidUntil;
         this.insuranceValidUntil=insuranceValidUntil;
         this.yearlyMaintenance=yearlyMaintenance;

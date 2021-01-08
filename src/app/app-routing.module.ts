@@ -3,11 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './components/login/login.component';
+import { DatainputComponent } from './components/datainput/datainput.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent  },
-  { path: 'login', component: LoginComponent  }
-
+  { path: 'login', component: LoginComponent  },
+  { path: 'crud', component: DatainputComponent}
 ];
 
 @NgModule({

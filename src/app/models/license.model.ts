@@ -3,7 +3,6 @@ import { Pilot } from "./pilot.model";
 export class License{
 
     dateOfInitialIssue:Date;
-    //title:String;
     licenseNumber:number;
     pilot:Pilot;
     id?:number;

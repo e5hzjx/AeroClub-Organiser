@@ -38,13 +38,20 @@ export class AuthService {
             .pipe(map(data => {
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 const pilot =  new Pilot(  //sorrend még lehet nem megfelelő
-                    data.rememberToken,
                     data.name,
                     data.email,
                     data.password,
+                    data.rememberToken,
                     data.phoneNumber,
                     data.dateOfBirth,
-                    data.startOfClubMemebership );
+                    data.startOfClubMemebership,
+                    data.parachutes,
+                    data.transporters,
+                    data.responsibleForPlanes,
+                    data.licenses,
+                    data.endorsements,
+                    data.id
+                    );
                 console.log(pilot);
                 localStorage.setItem('currentPilot', JSON.stringify(pilot));
                 this.currentPilotSubject.next(pilot);
