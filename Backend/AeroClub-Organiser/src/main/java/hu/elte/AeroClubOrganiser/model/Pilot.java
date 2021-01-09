@@ -12,18 +12,24 @@ public class Pilot {
     private long id;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<License> licens;
+    private List<License> licenses;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Parachute> parachutes;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Plane> responsibleForPlanes;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Endorsement> endorsements;
-    @ManyToOne(fetch = FetchType.LAZY)
-    private Transporter transporter;
+    @OneToMany(fetch = FetchType.LAZY)
+    private List<Transporter> transporters;
 
     private String name;
     private String email;
     private String password;
     private String rememberToken;
-    private String number;
+    private String phoneNumber;
     private Date dateOfBirth;
     private Date startOfClubMembership;
 }

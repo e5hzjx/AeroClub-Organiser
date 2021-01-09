@@ -14,8 +14,6 @@ public class License {
 
     @ManyToOne(fetch = FetchType.LAZY)
     private Pilot pilotId;
-    private String number;
-    private String title;
+    private String licenseNumber;
     private Date dateOfInitialIssue;
-
 }

@@ -19,6 +19,6 @@ public class Plane {
     Pilot responsiblePerson;
 
     Date airworthinessValidUntil;
-    Date insuranceValidUtil;
+    Date insuranceValidUntil;
     Date yearlyMaintenance;
 }
