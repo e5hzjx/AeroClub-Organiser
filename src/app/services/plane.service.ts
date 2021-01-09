@@ -33,10 +33,9 @@ export class PlaneService {
 
 
 
-    getPlane() : void {
-        //Observable<HttpEvent<Plane[]>>        
-         this.http
-            .get<Plane[]>(this.url, this.httpOptions).subscribe((resp)=>{console.log(resp + "asd")});
+    getPlane() : Observable<HttpEvent<Plane[]>> {
+        //]>>        
+        return this.http.get<Plane[]>(this.url, this.httpOptions);
     }
 
     postPlane(goal) {

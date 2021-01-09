@@ -12,6 +12,7 @@ import { PilotService } from './services/pilot.service';
 import { TransporterService } from './services/transporter.service';
 import { LoginComponent } from './components/login/login.component';
 import { DatainputComponent } from './components/datainput/datainput.component';
+import { FormsModule } from '@angular/forms';
 
 const routes:Routes = [
  
@@ -27,7 +28,8 @@ const routes:Routes = [
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [PlaneService,
               PlaneTypeService,

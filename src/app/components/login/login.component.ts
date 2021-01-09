@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   user: Pilot;
   
   constructor(
-    private PlaneService:PlaneService,
+    private planeService: PlaneService,
     private title: Title  ) {
      }
     
@@ -27,7 +27,14 @@ export class LoginComponent implements OnInit {
     
   ngOnInit() {
     this.title.setTitle('Login');
-    this.PlaneService.getPlane()
+    
+    this.planeService.getPlane().subscribe(
+      (data) => {
+        console.log(data);
+          
+      }, error => {
+        console.log('error: ', error)
+      });
   }
 }
 
