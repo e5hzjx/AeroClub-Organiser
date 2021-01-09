@@ -25,11 +25,35 @@ public class Pilot {
     @OneToMany(fetch = FetchType.LAZY)
     private List<Transporter> transporters;
 
-    private String name;
-    private String email;
+    private String pilotName;
+    private String pilotEmail;
     private String password;
     private String rememberToken;
     private String phoneNumber;
     private Date dateOfBirth;
     private Date startOfClubMembership;
+
+
+    public Pilot() {
+    }
+
+    public Pilot(String name, String email, String password) {
+        this.pilotName = name;
+        this.pilotEmail = email;
+        this.password = password;
+    }
+    public long getId() {
+        return id;
+    }
+
+    public String getEmail() {
+        return pilotEmail;
+    }
+    public String getPassword(){
+        return this.password;
+    }
+
+    public String getName(){
+        return this.pilotName;
+    }
 }

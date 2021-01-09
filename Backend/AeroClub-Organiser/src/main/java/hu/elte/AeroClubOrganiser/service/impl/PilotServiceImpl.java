@@ -36,4 +36,46 @@ public class PilotServiceImpl implements PilotService {
     public void delete(Pilot pilot) {
         pilotRepository.delete(pilot);
     }
+
+    @Override
+    public Pilot findByPilotName(String name) {
+        Pilot pilot = new Pilot();
+        Optional<Pilot> optionalPilot = pilotRepository.findByPilotName(name);
+        if(optionalPilot.isPresent())
+        {
+            pilot = optionalPilot.get();
+        }
+        return pilot;
+    }
+    @Override
+    public Pilot findByPilotEmail(String email) {
+        Pilot pilot = new Pilot();
+        Optional<Pilot> optionalPilot = pilotRepository.findByPilotEmail(email);
+        if(optionalPilot.isPresent())
+        {
+            pilot = optionalPilot.get();
+        }
+        return pilot;
+    }
+
+    @Override
+    public boolean existsByPilotName(String name) {
+        Optional<Pilot> optionalPilot = pilotRepository.findByPilotName(name);
+        if(optionalPilot.isPresent())
+        {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean existsByPilotEmail(String email) {
+        Optional<Pilot> optionalPilot = pilotRepository.findByPilotEmail(email);
+        if(optionalPilot.isPresent())
+        {
+            return true;
+        }
+        return false;
+    }
+
 }

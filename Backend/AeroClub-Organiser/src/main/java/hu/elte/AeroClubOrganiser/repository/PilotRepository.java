@@ -10,4 +10,8 @@ import java.util.Optional;
 public interface PilotRepository extends JpaRepository<Pilot, Long> {
     @Override
     Optional<Pilot> findById(Long aLong);
+
+    Optional<Pilot> findByPilotName(String name);
+
+    Optional<Pilot> findByPilotEmail(String email);
 }

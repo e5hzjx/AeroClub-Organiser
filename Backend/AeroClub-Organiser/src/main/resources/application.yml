@@ -8,3 +8,8 @@ spring:
     username: sa
     password: password
     driverClassName: org.h2.Driver
+security:
+  jwt:
+    token:
+      secret-key: secret-key
+      expire-length: 300000 # 5 minutes duration by default: 5 minutes * 60 seconds * 1000 miliseconds

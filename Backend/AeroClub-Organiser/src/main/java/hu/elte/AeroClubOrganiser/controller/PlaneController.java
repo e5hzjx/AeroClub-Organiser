@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/plane")
-@CrossOrigin(origins = "http://localhost:8080")
+@CrossOrigin(origins = "*",maxAge = 3600)
 public class PlaneController {
 
     @Autowired
