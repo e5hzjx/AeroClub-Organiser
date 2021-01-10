@@ -43,17 +43,11 @@ public class AuthController {
     @Autowired
     PilotServiceImpl pilotService;
 
-
-
-    @PostMapping("/signin")
+    @PostMapping("/login")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
-
-        Authentication authentication = authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
-
+        Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtUtils.generateJwtToken(authentication);
-
         PilotDetailsImpl userDetails = (PilotDetailsImpl) authentication.getPrincipal();
         return ResponseEntity.ok(new JwtResponse(jwt,
                 userDetails.getId(),
@@ -62,8 +56,7 @@ public class AuthController {
         ));
     }
 
-
-    @PostMapping("/signup")
+    @PostMapping("/register")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (pilotService.existsByPilotName(signUpRequest.getUsername())) {
             return ResponseEntity
@@ -82,10 +75,7 @@ public class AuthController {
                 signUpRequest.getEmail(),
                 encoder.encode(signUpRequest.getPassword()));
 
-
         pilotService.save(pilot);
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }
-
-
 }

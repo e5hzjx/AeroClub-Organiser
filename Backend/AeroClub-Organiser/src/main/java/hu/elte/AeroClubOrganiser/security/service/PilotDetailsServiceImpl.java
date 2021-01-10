@@ -21,10 +21,11 @@ public class PilotDetailsServiceImpl implements UserDetailsService{
     @Override
     @Transactional
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
+        //if (s.equals(null)) System.out.println("ripme S is null");
         Optional<Pilot> pilot = pilotRepository.findByPilotName(s);
-        if(pilot.isPresent())
+        if(!pilot.isPresent())
         {
-           throw new UsernameNotFoundException("Ezen a neven felhasznalo nem talalhato");
+           throw new UsernameNotFoundException("Username was not found");
         }
         return PilotDetailsImpl.build(pilot.get());
     }
@@ -32,14 +33,10 @@ public class PilotDetailsServiceImpl implements UserDetailsService{
     @Transactional
     public void deleteByPilotName(String s) throws UsernameNotFoundException {
         Optional<Pilot> pilot = pilotRepository.findByPilotName(s);
-        if(pilot.isPresent()) {
-            throw new UsernameNotFoundException("Ezen a neven felhasznalo nem talalhato");
+        if(!pilot.isPresent()) {
+            throw new UsernameNotFoundException("Username was not found");
         }
         pilotRepository.delete(pilot.get());
     }
-
-
-
-
 
 }

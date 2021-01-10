@@ -24,13 +24,13 @@ public class PlaneController {
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Boolean> savePlaneType(@RequestParam Plane plane){
+    public ResponseEntity<Boolean> savePlaneType(@RequestBody Plane plane){
         planeService.save(plane);
         return ResponseEntity.ok().body(true);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<Boolean> deletePlaneType(@RequestParam Plane plane){
+    public ResponseEntity<Boolean> deletePlaneType(@RequestBody Plane plane){
         planeService.delete(plane);
         return ResponseEntity.ok().body(true);
     }

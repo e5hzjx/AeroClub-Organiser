@@ -10,24 +10,25 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/plane/type")
+@CrossOrigin(origins = "*",maxAge = 3600)
 public class PlaneTypeController {
     @Autowired
     private PlaneTypeServiceImpl planeTypeService;
 
-    @GetMapping("/findbyid")
+    @GetMapping("/findById")
     public ResponseEntity<PlaneType> findById(@RequestParam Long id){
         PlaneType planeType = planeTypeService.findById(id);
         return ResponseEntity.ok().body(planeType);
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Boolean> savePlaneType(@RequestParam PlaneType planeType){
+    public ResponseEntity<Boolean> savePlaneType(@RequestBody PlaneType planeType){
         planeTypeService.save(planeType);
         return ResponseEntity.ok().body(true);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<Boolean> deletePlaneType(@RequestParam PlaneType planeType){
+    public ResponseEntity<Boolean> deletePlaneType(@RequestBody PlaneType planeType){
         planeTypeService.delete(planeType);
         return ResponseEntity.ok().body(true);
     }

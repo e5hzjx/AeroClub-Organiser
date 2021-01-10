@@ -8,24 +8,25 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/endorsement")
+@CrossOrigin(origins = "*",maxAge = 3600)
 public class EndorsementController {
     @Autowired
     private EndorsementServiceImpl endorsementService;
 
-    @GetMapping("/findbyid")
+    @GetMapping("/findById")
     public ResponseEntity<Endorsement> findById(@RequestParam Long id){
         Endorsement endorsement = endorsementService.findById(id);
         return ResponseEntity.ok().body(endorsement);
     }
 
     @PostMapping("/save")
-    public ResponseEntity<Boolean> saveEndorsement(@RequestParam Endorsement endorsement){
+    public ResponseEntity<Boolean> saveEndorsement(@RequestBody Endorsement endorsement){
         endorsementService.save(endorsement);
         return ResponseEntity.ok().body(true);
     }
 
     @PostMapping("/delete")
-    public ResponseEntity<Boolean> deleteEndorsement(@RequestParam Endorsement endorsement){
+    public ResponseEntity<Boolean> deleteEndorsement(@RequestBody Endorsement endorsement){
         endorsementService.delete(endorsement);
         return ResponseEntity.ok().body(true);
     }
