@@ -10,22 +10,20 @@ import { AuthService } from './auth.service';
     providedIn: 'root'
   }) 
 export class PlaneService {
-    private url = 'http://176.63.148.61:8080/plane/findbyid?id=2';
+    private url = 'http://176.63.148.61:8080/plane';
 
-    currentPilot: Pilot;
     httpOptions: any;
-
+    
     constructor(
         private http: HttpClient,
         private authenticationService: AuthService
     ) {
-        this.authenticationService.currentPilot.subscribe(x => this.currentPilot = x);
         this.httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Headers': '*',
-                'Authorization': 'Bearer ' //+ this.currentPilot.rememberToken
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             })
         };
     }
@@ -34,13 +32,14 @@ export class PlaneService {
 
 
     getPlane() : Observable<HttpEvent<Plane[]>> {
-        //]>>        
-        return this.http.get<Plane[]>(this.url, this.httpOptions);
+        //]>>  
+        console.log(localStorage.getItem('token'));
+        return this.http.get<Plane[]>(this.url +"/findById?id=2" , this.httpOptions);
     }
 
-    postPlane(goal) {
-        console.log(JSON.stringify(goal));
-     //   return this.http.post<Pilot>(this.url + this.currentUser.userName, JSON.stringify(goal), this.httpOptions);
+    postPlane(plane:Plane) {
+        console.log(JSON.stringify(plane));
+      return this.http.post<Plane>(this.url + '/save', JSON.stringify(plane), this.httpOptions);
     }
 
     updatePlane(id :number, goal) {

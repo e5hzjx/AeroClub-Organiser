@@ -1,14 +1,25 @@
 <header>
   <div class="container">
     <a routerLink="/" class="menu">Kezdőlap</a>
+      
     <nav>
+      
       <ul>
-        <li><a href="#" routerLink="/crud" >Adatbevitel</a></li>
-        <li><a href="#" routerLink="/login">Bejelentkezés</a></li>
-        <li><a href="#" routerLink="/reg">Regisztráció</a></li>
+        <li><a  routerLink="/planes" >Repülők</a></li>
+        <li><a  routerLink="/transport" >Szállítókocsik</a></li>
+        <li><a  routerLink="/para" >Ejtőernyők</a></li>
+        <li><a  routerLink="/endor" >Feljogosítások</a></li>
+        <li><a  routerLink="/licenses" >Szakszók</a></li>
+        
+        <li><a  routerLink="/planetype" >Típusok</a></li>
+        <!--<li><a  routerLink="/login">Bejelentkezés</a></li>-->
+        <li><a  routerLink="/register">Regisztráció</a></li>
+        <!--<li><a  ><button (click)="logOut()">Kijelentkezés</button></a></li>-->
+        <li><a  routerLink="{{buttonlink}}" ><button (click)="checkLoggedin()">{{action}}</button></a></li>
       </ul>
       
     </nav>
+    
   </div>
 </header>
 

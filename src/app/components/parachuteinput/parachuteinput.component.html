@@ -1,0 +1,27 @@
+
+<p>Ejtőernyő felvitele</p>
+
+<form  (ngSubmit)="onSubmit()" >
+    <label for="username">Típus</label><br>
+    <input type="text"  class="form-control" [formControl]="paraType" placeholder="Ülő vagy háti" />
+<br>
+    <label for=etxt >Szériaszám</label><br>
+    <input type="text" class="form-control" [formControl]="serialNumber" placeholder="Ernyő szériaszáma"/>
+
+<br>
+    <label for="text">Ernyő felelős</label><br>
+    <input type="text" class="form-control" [formControl]="respPerson" placeholder=""/>
+<br>
+    <label for="text">Hajtogatás dátuma</label><br>
+    <input type="date" class="form-control" [formControl]="lastFold" placeholder="Utoljára hajtogatva"/>
+<br>
+    <label for="text">Lejárati dátum</label><br>
+    <input type="date" class="form-control" [formControl]="lifeValid" placeholder="Végleges"/>
+  <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Bevitel
+    </button>
+
+    
+    
+</form>

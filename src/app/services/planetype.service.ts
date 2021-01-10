@@ -12,23 +12,23 @@ import { Planetype } from '../models/planetype.model';
 export class PlaneTypeService {
     private url = 'http://176.63.148.61:8080/';
 
-    currentPilot: Pilot;
     httpOptions: any;
 
     constructor(
         private http: HttpClient,
         private authenticationService: AuthService
     ) {
-        this.authenticationService.currentPilot.subscribe(x => this.currentPilot = x);
+       
         this.httpOptions = {
             headers: new HttpHeaders({
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*',
                 'Access-Control-Allow-Headers': '*',
-                'Authorization': 'Bearer ' + this.currentPilot.rememberToken
+                'Authorization': 'Bearer ' + localStorage.getItem('token')
             })
         };
     }
+
 
 
 

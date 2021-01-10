@@ -1,14 +1,1 @@
-
-  
-  <body>
-
-    <p>Adatbevitel</p>
-    <select id="month" [(ngModel)]="selectedType" (change)="ngOnChanges()">
-      <option *ngFor="let type of dataTypes" value="{{type.id}}">{{type.value}}</option>
-    </select>
-
-
-  </body>
-  <div class="container">
-    <router-outlet></router-outlet>
-  </div>
+<h1>A közelgő lejáratok típusai, dátumai</h1>

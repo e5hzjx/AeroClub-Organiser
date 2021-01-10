@@ -1,0 +1,34 @@
+<p>Repülőgép felvitele</p>
+
+<form  (ngSubmit)="onSubmit()" >
+    <label for="username">Farokszám</label><br>
+    <input type="text"  class="form-control" [formControl]="tailNumber" placeholder="A gép farokszáma (opc.)" />
+<br>
+    <label for=etxt >Regisztrációs szám</label><br>
+    <input type="text" class="form-control" [formControl]="regNumber" placeholder="A gép reg száma"/>
+
+<br>
+    <label for="text">Gép típus</label><br>
+    <input type="text" class="form-control" [formControl]="planeType" placeholder="Repülő typusa"/>
+<br>
+    <label for="text">Gépfeleős</label><br>
+    <input type="text" class="form-control" [formControl]="respPerson" placeholder="Repülő felelőse"/>
+<br>
+    <label for="text">Légialkalmassági</label><br>
+    <input type="date" class="form-control" [formControl]="airValid" placeholder="Légialkalamassági"/>
+<br>
+    <label for="text">Biztosítás</label><br>
+    <input type="date" class="form-control" [formControl]="insurance" placeholder="Biztosítás"/>
+<br>
+    <label for="text">Évi ápolás</label><br>
+    <input type="date" class="form-control" [formControl]="repair" placeholder="Éves ápolás"/>
+
+
+    <button [disabled]="loading" class="btn btn-primary">
+        <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+        Bevitel
+    </button>
+
+    
+    
+</form>

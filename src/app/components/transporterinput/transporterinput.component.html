@@ -1,0 +1,24 @@
+
+    <p>Szállítókocsi felvitele</p>
+
+    <form  (ngSubmit)="onSubmit()" >
+        <label for="username">Kocsi típusa</label><br>
+        <input type="text"  class="form-control" [formControl]="transporterType" placeholder="Kocsi típus" />
+    <br>
+        <label for="text">Gépfeleős</label><br>
+        <input type="text" class="form-control" [formControl]="respPerson" placeholder="Repülő felelőse"/>
+    <br>
+        <label for="text">Rendszám</label><br>
+        <input type="text" class="form-control" [formControl]="licensePlateNumber" placeholder="Rendszám"/>
+    <br>
+        <label for="text">Biztosítás</label><br>
+        <input type="text" class="form-control" [formControl]="planetype" placeholder="Repülő típus"/>
+
+    
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Bevitel
+        </button>
+    
+    </form>
+    

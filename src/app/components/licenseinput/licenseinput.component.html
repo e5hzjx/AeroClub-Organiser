@@ -1,0 +1,20 @@
+
+    <p>Szakszolgálati engedély adatai:</p>
+
+    <form  (ngSubmit)="onSubmit()" >
+        <label for="username">Lejárati dátuma</label><br>
+        <input type="date"  class="form-control" [formControl]="dateOfIssue" placeholder="" />
+    <br>
+        <label for=etxt >Licensz szám</label><br>
+        <input type="number" class="form-control" [formControl]="licenseNum" placeholder=""/>
+    
+    <br>
+    
+      <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Bevitel
+        </button>
+    
+        
+        
+    </form>

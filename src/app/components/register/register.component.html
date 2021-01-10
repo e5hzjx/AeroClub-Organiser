@@ -1,0 +1,19 @@
+<h2>Regsiter</h2>
+      
+<form  (ngSubmit)="onSubmit()" >
+        <label for="username">Username</label><br>
+        <input type="text"  class="form-control" [formControl]="userName" placeholder="Your username" />
+    <br>
+        <label for=email >Email</label><br>
+        <input type="email" class="form-control" [formControl]="emailAdress" placeholder="Your email adress"/>
+
+    <br>
+        <label for="password">Password</label><br>
+        <input type="password" class="form-control" [formControl]="password" placeholder="Your password"/>
+    
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Register
+        </button>
+
+</form>

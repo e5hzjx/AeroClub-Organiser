@@ -1,0 +1,15 @@
+
+    <p>Repülőgéptípus felvitele</p>
+
+    <form  (ngSubmit)="onSubmit()" >
+        <label for="username">Géptípus</label><br>
+        <input type="text"  class="form-control" [formControl]="planeType" placeholder="repülőgép típus" />
+   
+    
+        <button [disabled]="loading" class="btn btn-primary">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Bevitel
+        </button>
+    
+    </form>
+    

@@ -8,17 +8,14 @@ import { Pilot } from '../models/pilot.model';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
-    private currentPilotSubject: BehaviorSubject<Pilot>;
-    public currentPilot: Observable<Pilot>;
-    private url = ' http://176.63.148.61:8080/';
+    private url = ' http://176.63.148.61:8080/api/auth';
 
     constructor(
         private http: HttpClient,
         private route: ActivatedRoute,
         private router: Router
     ){
-        this.currentPilotSubject = new BehaviorSubject<Pilot>(JSON.parse(localStorage.getItem('currentPilot')));
-        this.currentPilot = this.currentPilotSubject.asObservable();
+    
     }
 
     private httpOptions = {
@@ -29,16 +26,15 @@ export class AuthService {
         })
     };
 
-    public get currentPilotValue(): Pilot {
-        return this.currentPilotSubject.value;
-    }
-
+  
     login(username, password) {
-        return this.http.post<any>(this.url + '/signin', { username, password }, this.httpOptions)
+
+        return this.http.post<any>(this.url + '/login', { username, password }, this.httpOptions)
             .pipe(map(data => {
+        console.log(data);
                 // store user details and jwt token in local storage to keep user logged in between page refreshes
                 const pilot =  new Pilot(  //sorrend még lehet nem megfelelő
-                    data.name,
+                    data.username,
                     data.email,
                     data.password,
                     data.rememberToken,
@@ -53,26 +49,26 @@ export class AuthService {
                     data.id
                     );
                 console.log(pilot);
-                localStorage.setItem('currentPilot', JSON.stringify(pilot));
-                this.currentPilotSubject.next(pilot);
+                //localStorage.setItem('currentPilot', JSON.stringify(pilot));
+                localStorage.setItem('token',data.accessToken);
+                console.log(data.accessToken);
                 return pilot;
             }));
     }
 
     logout() {
         // remove user from local storage and set current user to null
-        localStorage.removeItem('currentPilot');
-       // this.currentPilotSubject.unsubscribe();
-        this.currentPilotSubject.next(null);
+        localStorage.removeItem('token');
+      
     }
 
     register(username, email, password) {
-        return this.http.post<any>(this.url + '/signup', { username, email, password }, this.httpOptions).subscribe( 
+        return this.http.post<any>(this.url + '/register', { username, email, password }, this.httpOptions).subscribe( 
             data => {
                 console.log("Pilot is registered succesfully!");
                 setTimeout(() => {
                     alert("Pilot is registered succesfully!");
-                    this.router.navigate(['/signin']);
+                    this.router.navigate(['/login']);
                   },
                     1000);
             },

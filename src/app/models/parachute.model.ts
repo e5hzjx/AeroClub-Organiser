@@ -8,14 +8,14 @@ export class Parachute{
     responsiblePerson: Pilot;
     foldingDate: Date;
     lifeteimeValidty: Date;
-    id? : number;
+    id? : Number;
     constructor( 
         serialnumber: String,
         type:String,
         responsiblePerson:Pilot,
         foldingDate: Date,
         lifeteimeValidty: Date,
-        id? : number
+        id? : Number
             
     ){
         this.serialnumber=serialnumber;

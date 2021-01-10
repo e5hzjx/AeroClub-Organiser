@@ -12,7 +12,18 @@ import { PilotService } from './services/pilot.service';
 import { TransporterService } from './services/transporter.service';
 import { LoginComponent } from './components/login/login.component';
 import { DatainputComponent } from './components/datainput/datainput.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RegisterComponent } from './components/register/register.component';
+import { PlaneinputComponent } from './components/planeinput/planeinput.component';
+import { PlanetypeinputComponent } from './components/planetypeinput/planetypeinput.component';
+import { ParachuteinputComponent } from './components/parachuteinput/parachuteinput.component';
+import { TransporterinputComponent } from './components/transporterinput/transporterinput.component';
+import { EndorsementinputComponent } from './components/endorsementinput/endorsementinput.component';
+import { LicenseinputComponent } from './components/licenseinput/licenseinput.component';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+
+
 
 const routes:Routes = [
  
@@ -23,14 +34,24 @@ const routes:Routes = [
     AppComponent,
     LoginComponent,
     DatainputComponent,
+    RegisterComponent,
+    PlaneinputComponent,
+    PlanetypeinputComponent,
+    ParachuteinputComponent,
+    TransporterinputComponent,
+    EndorsementinputComponent,
+    LicenseinputComponent,
  
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot(routes),
     AppRoutingModule,
-    FormsModule
-  ],
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatCardModule,
+    ],
   providers: [PlaneService,
               PlaneTypeService,
               EndorsementService,
