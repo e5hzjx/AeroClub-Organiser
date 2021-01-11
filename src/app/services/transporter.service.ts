@@ -10,13 +10,13 @@ import { Transporter } from '../models/transporter.model';
     providedIn: 'root'
   }) 
 export class TransporterService {
-    private url = 'http://176.63.148.61:8080/';
+    private url = 'http://176.63.148.61:8080/transporter';
 
     httpOptions: any;
 
     constructor(
         private http: HttpClient,
-        private authenticationService: AuthService
+        private authenticationService3: AuthService
     ) {
        
         this.httpOptions = {
@@ -37,10 +37,11 @@ export class TransporterService {
             .get<Transporter[]>(this.url, this.httpOptions);
     }
 
-    postTransporter(goal) {
-        console.log(JSON.stringify(goal));
-     //   return this.http.post<Pilot>(this.url + this.currentUser.userName, JSON.stringify(goal), this.httpOptions);
-    }
+    postTransporter(transporter:Transporter) {
+        console.log(JSON.stringify(transporter));
+        
+        return this.http.post<Transporter>(this.url + '/save', JSON.stringify(transporter), this.httpOptions);
+   }
 
     updateTransporter(id :number, goal) {
         //return this.http.put<any>(this.url + this.currentUser.userName  +"/" + id, JSON.stringify(goal), this.httpOptions);

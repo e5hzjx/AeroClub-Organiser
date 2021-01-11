@@ -4,19 +4,20 @@ import { Observable } from 'rxjs';
 import { Pilot } from '../models/pilot.model';
 import { Plane } from '../models/plane.model';
 import { AuthService } from './auth.service';
+import { Parachute } from '../models/parachute.model';
 
 
 @Injectable({
     providedIn: 'root'
   }) 
 export class ParachuteService {
-    private url = 'http://176.63.148.61:8080/plane/findbyid?id=2';
+    private url = 'http://176.63.148.61:8080/parachute';
 
     httpOptions: any;
 
     constructor(
         private http: HttpClient,
-        private authenticationService: AuthService
+        private authenticationService3: AuthService
     ) {
        
         this.httpOptions = {
@@ -38,9 +39,9 @@ export class ParachuteService {
             .get<Plane[]>(this.url, this.httpOptions).subscribe((resp)=>{console.log(resp + "asd")});
     }
 
-    postParachute(goal) {
-        console.log(JSON.stringify(goal));
-     //   return this.http.post<Pilot>(this.url + this.currentUser.userName, JSON.stringify(goal), this.httpOptions);
+    postParachute(parachute:Parachute) {
+        console.log(JSON.stringify(parachute));
+        return this.http.post<Parachute>(this.url + '/save', JSON.stringify(parachute), this.httpOptions);
     }
 
     updateParachute(id :number, goal) {

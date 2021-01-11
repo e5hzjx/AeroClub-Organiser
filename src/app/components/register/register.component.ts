@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
     this.authservice.register(this.userName.value ,this.emailAdress.value ,this.password.value);
     //this.authservice.register(this.userName ,this.emailAdress ,this.password);
     //console.log(this.user, this.email, this.password);
-    console.log(this.userName.value + this.emailAdress.value + this.password.value);
+    //console.log(this.userName.value + this.emailAdress.value + this.password.value);
   }
 
   ngOnInit(): void {

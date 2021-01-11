@@ -16,7 +16,7 @@ export class PlaneService {
     
     constructor(
         private http: HttpClient,
-        private authenticationService: AuthService
+        private authenticationService1: AuthService
     ) {
         this.httpOptions = {
             headers: new HttpHeaders({
@@ -32,7 +32,7 @@ export class PlaneService {
 
 
     getPlane() : Observable<HttpEvent<Plane[]>> {
-        //]>>  
+        
         console.log(localStorage.getItem('token'));
         return this.http.get<Plane[]>(this.url +"/findById?id=2" , this.httpOptions);
     }

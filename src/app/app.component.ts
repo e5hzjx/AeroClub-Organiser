@@ -14,7 +14,7 @@ export class AppComponent {
   data = [];
   action='Bejelentkezés ';
   buttonlink='/login';
-  
+  isLoggedin=false;
   constructor(
    private http: HttpClient,
    private authservice:AuthService,
@@ -23,14 +23,17 @@ export class AppComponent {
   
   }
   checkLoggedin(){
-    if(localStorage.getItem('token')!==''){
-      this.action='Kijelentkezés' ;
-      this.buttonlink='';
-      this.logOut();
-  }else{
-    this.action='Bejelentkezés ';
-    this.buttonlink='/login';
     
+      this.isLoggedin=(localStorage.getItem('token')==='');
+    if(this.isLoggedin==false){
+
+      this.action='Bejelentkezés' ;
+      this.buttonlink='/login';
+      
+  }else{
+    this.action='Kijelentkezés';
+    this.buttonlink='#';
+    this.logOut();
     //TODO Gomb
 
   }

@@ -15,7 +15,7 @@ export class PilotService {
 
     constructor(
         private http: HttpClient,
-        private authenticationService: AuthService
+        private authenticationService2: AuthService
     ) {
        
         this.httpOptions = {
@@ -36,8 +36,8 @@ export class PilotService {
             .get<Pilot[]>(this.url, this.httpOptions);
     }
 
-    postPilot(goal) {
-        console.log(JSON.stringify(goal));
+    postPilot(pilot:Pilot) {
+        console.log(JSON.stringify(pilot));
      //   return this.http.post<Pilot>(this.url + this.currentUser.userName, JSON.stringify(goal), this.httpOptions);
     }
 

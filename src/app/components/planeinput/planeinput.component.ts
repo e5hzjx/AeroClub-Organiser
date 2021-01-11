@@ -31,7 +31,7 @@ export class PlaneinputComponent implements OnInit {
       this.tailNumber.value,
       this.regNumber.value,
       this.planeType.value,
-      this.respPerson.value,
+      null,
       this.airValid.value,
       this.insurance.value,
       this.repair.value,
