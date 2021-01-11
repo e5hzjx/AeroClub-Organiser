@@ -4,7 +4,7 @@ $primary: rgb(145, 187, 226);
 
 body {
     margin: 0;
-    font-family: 'Nunito', 'sans-serif';
+    font-family: "Times New Roman", Times, serif;
     font-size: 18px;
 }
 
@@ -18,23 +18,37 @@ body {
 header {
     background: $primary;
     padding: 1em 0;
-
-    
-
+ 
+    button {
+        color:rgb(0, 0, 0);
+        border-radius: 5px;
+        &:hover {
+            color:white;
+            background: rgb(0,60,99);
+            background: linear-gradient(0deg, rgba(0,60,99,1) 0%, rgb(79, 119, 156) 74%);
+            //background: darken($primary, 30%);
+            //color:white;
+        }
+    }
     a {
         color: white;
         text-decoration: none;
         padding-right: 10px;
-
-        
+        text-shadow: 2px 2px 5px rgb(5, 5, 85);
+        border-radius: 10px;
     }
     a.logo {
         font-weight: bold;
     }
+    a.menu{
+        font-family: "Times New Roman", Times, serif;
+        
+    }
 
     nav {
         float: right;
-
+        font-family: "Times New Roman", Times, serif;
+        font-size: 20px;
         ul {
             list-style-type: none;
             margin: 0;
@@ -51,11 +65,7 @@ header {
     }
 }
 
+
 h1 {
     margin-top: 2em;
-}
-
-body{
-
-    background-color: lighten($primary, 10%);
 }
