@@ -33,10 +33,14 @@ export class ParachuteService {
 
 
 
-    getParachute() : void {
+    getParachute() : Parachute[] {
         //Observable<HttpEvent<Plane[]>>        
          this.http
-            .get<Plane[]>(this.url, this.httpOptions).subscribe((resp)=>{console.log(resp + "asd")});
+            .get<Parachute[]>(this.url +'/listAll', this.httpOptions).subscribe((resp)=>{
+                console.log(resp)
+                return resp
+            });
+            return null;
     }
 
     postParachute(parachute:Parachute) {

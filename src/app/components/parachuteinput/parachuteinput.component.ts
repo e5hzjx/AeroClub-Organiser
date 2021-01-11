@@ -16,8 +16,7 @@ export class ParachuteinputComponent implements OnInit {
   respPerson= new FormControl('');
   lastFold=new FormControl('');
   lifeValid=new FormControl('');
-  insurance=new FormControl('');
-
+  para:Parachute[];
   data1='1';
   data2='2';
   data3='3';
@@ -26,17 +25,20 @@ export class ParachuteinputComponent implements OnInit {
   parachute:Parachute;
   constructor(
     private parachuteService:ParachuteService,
+ 
   ) { }
 
   
   onSubmit(){
     this.parachute=new Parachute(
-     this.paraType.value,
-     this.serialNumber.value,
+      this.serialNumber.value,
+      this.paraType.value,
+   
     // this.respPerson.value,
      null,
      this.lastFold.value,
-     this.insurance.value,
+     this.lifeValid.value,
+     
      )
    
      this.parachuteService.postParachute(this.parachute).subscribe(data=>{
@@ -53,7 +55,10 @@ export class ParachuteinputComponent implements OnInit {
  }
 
 getPara(){
-
+  
+  this.para=this.parachuteService.getParachute();
+  //this.data1=this.para.indexOf(1);
+  console.log(this.para)
 }
 
   ngOnInit(): void {
