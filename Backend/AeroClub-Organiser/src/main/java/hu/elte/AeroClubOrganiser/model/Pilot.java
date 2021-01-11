@@ -125,6 +125,10 @@ public class Pilot {
         this.pilotEmail = pilotEmail;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
     public void setPassword(String password) {
         this.password = password;
     }

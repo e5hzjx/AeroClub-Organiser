@@ -31,7 +31,7 @@ public class PilotDetailsImpl implements UserDetails {
     }
 
 
-    public String getEmail(){ return pilot.getEmail();}
+    public String getEmail(){ return pilot.getPilotEmail();}
 
     public long getId(){ return pilot.getId();}
 
@@ -42,7 +42,7 @@ public class PilotDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return pilot.getName();
+        return pilot.getPilotName();
     }
 
     @Override

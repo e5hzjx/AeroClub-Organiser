@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -16,6 +17,8 @@ public class ParachuteServiceImpl implements ParachuteService {
 
     @Autowired
     ParachuteRepository parachuteRepository;
+
+    public List<Parachute> findAll(){return parachuteRepository.findAll();}
 
     @Override
     public Parachute findById(Long id) {
